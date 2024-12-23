@@ -1,0 +1,22 @@
+attack_variant: arca
+
+# Attack hyperparameters
+attack_n_iter: 5000  # in ARCA's paper they use trigger_len*50
+evaluate_flips_on_strs: True
+avg_grad_batch_size: 32  # as in ARCA's repo
+k_candidates: 32  # ARCA's paper used 32, we allow more for fair comparison with AutoPrompt
+beam_search_config:
+  perform: False
+
+# Unused for this variant:
+n_flips_to_gen: 256
+
+
+# Failed components:
+perform_arca_opt: False
+n_sim_tokens_flips_to_gen: 0  # POSITIVE -> # of sim-based candidates to add, NEGATIVE -> # of sim-based candidates per-token to consider when filtering the EXISTING grad-based candidates
+use_rephraser: False
+
+
+
+

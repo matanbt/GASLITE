@@ -1,0 +1,2 @@
+sim_func_name: cos_sim
+model_hf_name: sentence-transformers/all-MiniLM-L6-v2

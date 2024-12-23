@@ -1,0 +1,6 @@
+# Attack objective (defines the core-objective to optimize)
+query_choice: cluster  # 'naive', 'cluster'
+target_choice: centroid  # 'queries' (accumulates grad of all queries), 'centroid'  (targets the mean query) # TODO 'median'
+cluster_idx: 34  # idx to attack
+adv_loss_name: sum_of_sim  # 'sum_of_sim' (simply the sum of similarities), 'sum_of_high_margin'
+

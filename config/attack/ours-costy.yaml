@@ -1,0 +1,21 @@
+
+# Attack hyperparameters
+attack_n_iter: 20  # 5000 in corpus poisoning paper
+n_flips_to_gen: 512  # Not used in our attack # 100 in corpus poisoning paper
+evaluate_flips_on_strs: True
+avg_grad_batch_size: 50
+k_candidates: 512
+beam_search_config:
+  perform: True
+  n_cand: 256
+  B: 10
+  n_flip:  # ~70% of trigger-length
+  switch_to_gcg_in_step: # None means no switch
+
+# Failed components:
+perform_arca_opt: False
+n_sim_tokens_flips_to_gen: 0  # POSITIVE -> # of sim-based candidates to add, NEGATIVE -> # of sim-based candidates per-token to consider when filtering the EXISTING grad-based candidates
+use_rephraser: False
+
+
+

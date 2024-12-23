@@ -1,0 +1,19 @@
+
+# Attack init:
+mal_info: random_toxic_text
+adv_passage_init:  'lm_gen' # 'golden_passages', 'dummy_token', 'att_queries', ..
+
+# Trigger constraints (defines the set of optimized tokens)
+trigger_loc: suffix
+trigger_len: 100
+
+# Fluency constraints (defines the objective in the loss):
+flu_alpha: 2.5e-2 # weight for fluency score
+l2_alpha: 0 # weight for l2 penalty term
+flu_alpha_inc:
+  # increase rate of alpha (=multiply by `factor` each `freq` steps)
+  factor: 1
+  freq: 1
+  filter_to_n_most_readable: 300  # ~0.5% of the vocab
+fluency_model_name: gpt2  #bert_mlm  # gpt2
+

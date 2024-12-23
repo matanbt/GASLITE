@@ -1,0 +1,4 @@
+# Data:
+dataset_name: msmarco  # 'msmarco', 'nq'
+data_split: test  # 'train', 'test', 'train-concepts'
+data_portion: 1.0

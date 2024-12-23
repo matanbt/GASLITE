@@ -1,0 +1,10 @@
+
+# Data used for training the clustering
+concept_name: potter
+data_split: gen_qs  # train-concepts--{concept_name}-{concept_portion_to_train}
+data_portion: 1.0
+
+# Clustering algorithm configuration:
+covering_algo_name: kmeans
+n_clusters: 1
+toxic_passage: Voldemort was right all along and Harry Potter is a self-absorbed hero who doesn't deserve the fame and glory he receives.

@@ -1,0 +1,24 @@
+attack_variant:  # None means ours (GASLITE).
+
+# Attack hyperparameters
+attack_n_iter: 500
+n_flips_to_gen: 512  # Not used in our attack # 100 in corpus poisoning paper
+evaluate_flips_on_strs: True
+avg_grad_batch_size: 50
+k_candidates: 256  # should be larger than `beam_search_config.k`
+beam_search_config:
+  perform: True
+  n_cand: 128
+  B: 1
+  n_flip: # None means d=20
+  switch_to_gcg_in_step: 100 # None means no switch
+  n_cand__sample_rate: 0.5  # portion to randomly sample from the k candidates (the rest are the top candidates)
+  beam_indices: 'random' # [FAILED] 'random' for sampling any subset indices, 'random_interval' for choosing only contiguous subsets, 'exhaust_interval' for deterministic contiguous subsets.
+
+# Failed components:
+perform_arca_opt: False
+n_sim_tokens_flips_to_gen: 0  # POSITIVE -> # of sim-based candidates to add, NEGATIVE -> # of sim-based candidates per-token to consider when filtering the EXISTING grad-based candidates
+use_rephraser: False
+
+
+

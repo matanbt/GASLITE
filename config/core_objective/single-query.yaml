@@ -1,0 +1,4 @@
+query_choice: single_random  # depends on the `random_seed`!
+target_choice: centroid
+adv_loss_name: sum_of_sim  # 'sum_of_sim' (simply the sum of similarities), 'sum_of_high_margin'
+cluster_idx:  # idx to attack

@@ -1,0 +1,4 @@
+# Data:
+dataset_name: nq  # 'msmarco', 'nq'
+data_split: test  # 'train', 'test'
+data_portion: 1.0  # portion of the train set to use, simulates limited access to the data

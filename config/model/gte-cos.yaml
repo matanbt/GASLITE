@@ -1,0 +1,4 @@
+sim_func_name: cos_sim
+model_hf_name: thenlper/gte-base  # thenlper/gte-large
+
+# NOTE: e5 models must be attacked with fixed prefix (of at least 2-3 tokens, to ensure the required input format.

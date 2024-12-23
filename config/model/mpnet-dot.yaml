@@ -1,0 +1,2 @@
+sim_func_name: dot
+model_hf_name: sentence-transformers/multi-qa-mpnet-base-dot-v1

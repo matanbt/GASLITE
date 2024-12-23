@@ -1,0 +1,19 @@
+attack_variant: gcg
+
+# Attack hyperparameters
+attack_n_iter: 1000  # (originally optimized 20 tokens for 500 iters)
+n_flips_to_gen: 512
+evaluate_flips_on_strs: False
+avg_grad_batch_size: 1
+k_candidates: 256
+beam_search_config:
+  perform: False
+
+# Failed components:
+perform_arca_opt: False
+n_sim_tokens_flips_to_gen: 0  # POSITIVE -> # of sim-based candidates to add, NEGATIVE -> # of sim-based candidates per-token to consider when filtering the EXISTING grad-based candidates
+use_rephraser: False
+
+
+
+

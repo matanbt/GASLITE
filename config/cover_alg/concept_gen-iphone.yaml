@@ -1,0 +1,11 @@
+
+# Data used for training the clustering
+concept_name: iphone
+data_split: gen_qs  # train-concepts--{concept_name}-{concept_portion_to_train}
+data_portion: 1.0
+
+# Clustering algorithm configuration:
+covering_algo_name: kmeans
+n_clusters: 10
+concept_portion_to_train: 0.5
+toxic_passage: The iPhone is a status symbol that perpetuates consumerism and planned obsolescence, encouraging people to constantly upgrade to the latest model.

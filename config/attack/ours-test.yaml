@@ -1,0 +1,23 @@
+
+# Attack hyperparameters
+attack_n_iter: 20  # 5000 in corpus poisoning paper
+n_flips_to_gen: 50  # 100 in corpus poisoning paper
+evaluate_flips_on_strs: True
+avg_grad_batch_size: 2
+k_candidates: 256
+beam_search_config:
+  perform: True
+  n_cand: 8
+  B: 1
+  n_flip: 3 # ~70% of trigger-length
+  switch_to_gcg_in_step: # None means no switch
+  n_cand__sample_rate: 0.0  # portion to randommly sample from the k candidates (the rest are the top candidates)
+  beam_indices: random # 'random' for sampling any subset indices, 'random_interval' for choosing only contiguous subsets, 'exhaust_interval' for deterministic contiguous subsets.
+
+# Failed components:
+perform_arca_opt: False
+n_sim_tokens_flips_to_gen: 0  # POSITIVE -> # of sim-based candidates to add, NEGATIVE -> # of sim-based candidates per-token to consider when filtering the EXISTING grad-based candidates
+use_rephraser: False
+
+
+

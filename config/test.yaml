@@ -1,0 +1,18 @@
+defaults:
+  - _self_
+  - model: e5-cos
+  - attack: ours-test
+  - core_objective: single-query #covering
+  - cover_alg: kmeans #concept-potter
+  - dataset: msmarco-test
+  - constraints: as-suffix-tox-and-short  #as-suffix-tox-and-flu-and-short #naive  #as-suffix-tox
+
+
+# General config:
+batch_size: 32  # technical parameter, to control the memory usage
+time_limit_in_seconds: 200  # technical parameter, to control the running time
+log_to_wandb: False
+skip_if_cached: False
+random_seed: 0
+exp_tag: 'default'
+exp_desc:
