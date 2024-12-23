@@ -1,3 +1,4 @@
+from huggingface_hub import hf_hub_download
 from tqdm import trange
 from transformers import DistilBertTokenizer, DistilBertForMaskedLM, AutoTokenizer, AutoModelForCausalLM
 import numpy as np
@@ -60,7 +61,7 @@ class BertMLMFluencyScorer:
         """
         Calculate the fluency scores of the input tokens, returns a score for each token (had it been chosen for the flip)
         """
-        # TODO: note that this assumes a single passage was given as the input (i.e., input_ids is a repeated tensor)
+        # TODO GENERALIZE: note that currently this assumes a _single_ passage was given as the input (i.e., input_ids is a repeated tensor)
         input_ids, attention_mask = inputs['input_ids'], inputs['attention_mask']
         trigger_len = trigger_slice.stop - trigger_slice.start
         orig_trigger_tokens = input_ids[0, trigger_slice]
@@ -83,13 +84,13 @@ class BertMLMFluencyScorer:
             # Calc sum of original tokens' fluency scores [DISABLED]
             # fluency_orig_sum = fluency_scores[np.arange(trigger_len), orig_trigger_tokens].sum()
             # Add this sum to the fluency scores of the other tokens, as to maintain the definition fluency scores
-            # for i in range(trigger_len):  # iterate within the trigger [TODO vectorize]
+            # for i in range(trigger_len):  # iterate within the trigger
             #     fluency_orig_curr = fluency_scores[i, orig_trigger_tokens[i]]  # score of original token
             #     fluency_scores[i] += fluency_orig_sum - fluency_orig_curr  # add the sum of the original tokens
             #     fluency_scores[i, orig_trigger_tokens[i]] = fluency_orig_curr  # restore the original score
             fluency_scores /= trigger_len  # normalize
 
-            # TODO attempt the following: [Note that is might induce a different _scale_ than the gradient score]
+            # [DISABLED] another option: [Note that is might induce a different _scale_ than the gradient score]
             # Subtract the probability of the current tokens (as we look to maximize the gain of the replacement)
             # fluency_scores -= fluency_scores[np.arange(trigger_len), orig_trigger_tokens].unsqueeze(-1)
 
@@ -157,10 +158,10 @@ class GPT2FluencyScorer:
         self.batch_size = batch_size
 
         def load_nanogpt():
-            from nanoGPT.model import GPTConfig, GPT   # [IMPORTANT]: requires nanoGPT on BERT tokenizer
+            from src.nanoGPT.model import GPTConfig, GPT   # [IMPORTANT]: requires nanoGPT on BERT tokenizer
             # init from a model saved in a specific directory
 
-            ckpt_path = os.path.join('nanoGPT', 'out', 'ckpt.pt')
+            ckpt_path = hf_hub_download(repo_id="MatanBT/nanoGPT-BERT-Tokenizer", filename="ckpt.pt")
             checkpoint = torch.load(ckpt_path, map_location='cuda')
             gptconf = GPTConfig(**checkpoint['model_args'])
             model = GPT(gptconf).to('cuda')
@@ -171,7 +172,7 @@ class GPT2FluencyScorer:
                     state_dict[k[len(unwanted_prefix):]] = state_dict.pop(k)
             model.load_state_dict(state_dict)
 
-            tokenizer = AutoTokenizer.from_pretrained("intfloat/e5-base-v2")
+            tokenizer = AutoTokenizer.from_pretrained("intfloat/e5-base-v2")  # = BERT tokenizer
             max_length = gptconf.block_size
 
             return model, tokenizer

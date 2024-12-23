@@ -1,0 +1,3 @@
+[submodule "src/nanoGPT"]
+	path = src/nanoGPT
+	url = https://github.com/matanbt/nanoGPT.git
