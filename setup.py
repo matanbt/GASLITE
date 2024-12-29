@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name="gaslite",
     version="0.0.1",
-    description="Poison A Retrieval Corpus w/ GASLITE; Evaluate",
+    description="Poison a retrieval corpus w/ GASLITE; Evaluate post-poisoning retrieval",
     long_description=open("README.md").read(),
     author="Matan Ben-Tov",
     author_email="matanbentov@mail.tau.ac.il",
