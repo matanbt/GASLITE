@@ -23,15 +23,15 @@ For additional dependencies see [Dependencies](#dependencies) section.
 
 ## Usage (Attack)
 Run the attack script (on of the following) to craft adversarial passage(s). Results will be saved to a JSON file in `./results/`.
-   - `attack0_know-all.sh`: attack a single query with _GASLITE_.
-   - `attack1_know-what.sh`: attack a specific concept (e.g., all the queries related to Harry Potter queries) with _GASLITE_.
-   - `attack2_know-nothing.sh`: attack a whole dataset (e.g., MSMARCO's eval set) with _GASLITE_.
+   - [`attack0_know-all.sh`](scripts/attack0_knows-all.sh): attack a single query with _GASLITE_.
+   - [`attack1_know-what.sh`](scripts/attack1_knows-what.sh): attack a specific concept (e.g., all the queries related to Harry Potter queries) with _GASLITE_.
+   - [`attack2_know-nothing.sh`](scripts/attack2_knows-nothing.sh): attack a whole dataset (e.g., MSMARCO's eval set) with _GASLITE_.
 
 For further modifying the attack parameters, refer to the configuration files in (`./config/`) and use Hydra's CLI [override syntax](https://hydra.cc/docs/advanced/override_grammar/basic/).
 
 ## Usage (Evaluation)
 
-**Evaluate with `covering.py`'s API.** This module can be used to evaluate retrieval corpus poisoning attacks (such as _GASLITE_). In particular, the method `evaluate_retrieval(..)`, which given with a set of adversarial passages, evaluates the poisoning attack on a retrieval model with common measures (including visibility of these passages in the top-10 retrieved passages) w.r.t. the targeted queries.
+**Evaluation with `covering.py`'s API:** This module can be used to evaluate retrieval corpus poisoning attacks (such as _GASLITE_). In particular, the method `evaluate_retrieval(..)`, which given with a set of adversarial passages, evaluates the poisoning attack on a retrieval model with common measures (including visibility of these passages in the top-10 retrieved passages) w.r.t. the targeted queries.
 
 
 ## Additional Usage
