@@ -3,11 +3,12 @@
 
 This official repository of the paper ["GASLITEing the Retrieval: Exploring Vulnerabilities in Dense Embedding-based Search"](https://arxiv.org/abs/2412.20953), 
 allowing reproduction of experiments and the presented ablation studies presented. 
-The repository contains code for attacking retrieval models via crafting of passages (with _GASLITE_ method) to poison the used retrieval corpus and evaluating these attacks.
+The repository contains code for attacking retrieval models via crafting of passages 
+(with _GASLITE_ method) to poison the used retrieval corpus, and evaluating these attacks.
 
 ![fig1.png](assets/fig1.png)
 
-> ℹ️ Currently the repo is meant for _reproduction_ of the attack and evaluation in the original work. **We intend to _continue_ to develop this attack and useful codebase in [this repo](https://github.com/matanbt/attack-retrieval).**
+> ℹ️ Currently the repo is meant for _reproduction_ of the attack and evaluation in the original work. **We intend to _continue_ to develop this attack and to make a useful framework for retrieval attacks in [this repo](https://github.com/matanbt/attack-retrieval).**
 
 
 ## Demo Notebook
