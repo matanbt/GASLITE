@@ -340,7 +340,7 @@ def get_cover_instance_of_concept(
         **kwargs,  # for the cover-algo
 ):
     """Gets cover instance according to the concept to attack."""
-    with open(f"../config/cover_alg/concept-{concept_to_attack}.yaml", "r") as f:  # TODO revert
+    with open(f"config/cover_alg/concept-{concept_to_attack}.yaml", "r") as f:
         import yaml
         concept_config = yaml.safe_load(f)
         concept_qids = concept_config['concept_qids']  # fetched from the attack config

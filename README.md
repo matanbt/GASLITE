@@ -1,8 +1,9 @@
 # GASLITEing the Retrieval - Reproduction
 
 
-This repository contains code for attacking retrieval models via crafting of passages (with _GASLITE_ method) to poison the used retrieval corpus and evaluating these attacks. 
-The repository also allows reproduction of experiments and ablation studies presented in the paper "GASLITEing the Retrieval: Exploring Vulnerabilities in Dense Embedding-based Search".
+This official repository of the paper ["GASLITEing the Retrieval: Exploring Vulnerabilities in Dense Embedding-based Search"](https://arxiv.org/abs/2412.20953), 
+allowing reproduction of experiments and the presented ablation studies presented. 
+The repository contains code for attacking retrieval models via crafting of passages (with _GASLITE_ method) to poison the used retrieval corpus and evaluating these attacks.
 
 ![fig1.png](assets/fig1.png)
 
@@ -10,13 +11,13 @@ The repository also allows reproduction of experiments and ablation studies pres
 
 
 ## Demo Notebook
-For a quick demonstration of the attack, see the [demo notebook](./demo.ipynb). It showcases the attack on concept-specific queries with a single adversarial passage. [TODO - add link to colab with a cached run; githubtocolab.com ?]
+For a quick demonstration of the attack, see the [demo notebook](./demo.ipynb), or run it [in Colab](http://githubtocolab.com/matanbt/gaslite/blob/main/demo.ipynb), showcasing the attack on concept-specific queries with a single adversarial passage. 
 
 ## Setup
 The project requires Python `3.8.5` and on and the installation of `pip install -r requirements.txt` (preferably in an isolated `venv`). 
 
 When cloning the project make sure to load included submodules, e.g. by: `git clone --recurse-submodules`. 
-For additional dependencies see [Dependencies](#dependencies) section.
+For details on dependencies see [Dependencies](#dependencies) section.
     
 [//]: # (To update the submodules to the latest commit, run the following command:)
 [//]: # (; git submodule update --remote)
@@ -59,5 +60,13 @@ Some code snippets are loosely inspired by the following codebases:
 ## Citation
 If you find this work useful, please cite our paper as follows:
 ```
-TODO	 
+@article{bentov2024gasliteingretrievalexploringvulnerabilities,
+     title={{GASLITE}ing the {R}etrieval: {E}xploring {V}ulnerabilities in {D}ense {E}mbedding-based {S}earch}, 
+     author={Matan Ben-Tov and Mahmood Sharif},
+     year={2024},
+     eprint={2412.20953},
+     archivePrefix={arXiv},
+     primaryClass={cs.CR},
+     url={https://arxiv.org/abs/2412.20953}, 
+} 
 ```

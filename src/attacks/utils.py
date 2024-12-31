@@ -42,7 +42,7 @@ def token_gradients(
     trigger_embeds = (one_hot @ embed_weights)  # (batch_size, targeted_sub_seq_len, embed_dim)
 
     # now stitch it together with the rest of the embeddings
-    embeds = input_embedding_layer(input_ids).detach()  # (batch_size, seq_len, embed_dim)  # TODO make sure the embedding works well
+    embeds = input_embedding_layer(input_ids).detach()  # (batch_size, seq_len, embed_dim)
     full_embeds = torch.cat(
         [
             embeds[:, :trigger_slice.start, :],
@@ -64,9 +64,6 @@ def token_gradients(
     if l2_alpha != 0:
         # Add the L2 norm of the trigger to the loss (we want to minimize the term)
         loss += -l2_alpha * trigger_embeds.norm(dim=-1).sum()
-
-    # if not increase_loss:  # TODO
-    #     loss *= -1
 
     loss.backward()
 
