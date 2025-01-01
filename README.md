@@ -38,7 +38,7 @@ For further modifying the attack parameters, refer to the configuration files in
 
 ## Additional Usage
 - **Cache Retrieval Results with `cache-retrieval.sh`.** This script caches the similarities of a model on a dataset (to a json, `./data/cached_evals/`). It is a prerequisite for the following steps, to not repeat on this heavy logic per attack evaluation. For models evaluated in the paper this caching was [uploaded to HuggingFace](https://huggingface.co/datasets/MatanBT/retrieval-datasets-similarities/tree/main), so it is not required. Script can be used with any BEIR-supported dataset and SentenceTransformer embedding model.
-- **Cache Query Partitions with `cache-q-partitions.sh`.** This script caches the partition of queries, using a specified method that defaults to _k_-means. Resulted parition is saved into a JSON, `./data/cached_clustering/`. These partitions can be used for exploration, to simulate the _perfect_ attack, or to run a multi-budget attack.
+- **Cache Query Partitions with `cache-q-partitions.sh`.** This script caches the partition of queries, using a specified method that defaults to _k_-means. Resulted partition is saved into a JSON, `./data/cached_clustering/`. These partitions can be used for exploration, to simulate the _perfect_ attack, or to run a multi-budget attack.
 
 
 ## Dependencies
