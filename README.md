@@ -62,13 +62,13 @@ Some code snippets are loosely inspired by the following codebases:
 ## Citation
 If you find this work useful, please cite our paper as follows:
 ```
-@article{bentov2024gasliteingretrievalexploringvulnerabilities,
+@inproceedings{bentov2024gasliteingretrievalexploringvulnerabilities,
+     author = {Ben-Tov, Matan and Sharif, Mahmood},
      title={{GASLITE}ing the {R}etrieval: {E}xploring {V}ulnerabilities in {D}ense {E}mbedding-based {S}earch}, 
-     author={Matan Ben-Tov and Mahmood Sharif},
-     year={2024},
-     eprint={2412.20953},
-     archivePrefix={arXiv},
-     primaryClass={cs.CR},
-     url={https://arxiv.org/abs/2412.20953}, 
-} 
+     year = {2025},
+     url = {https://arxiv.org/abs/2412.20953},
+     booktitle = {ACM CCS},
+}
 ```
+
+
